@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 80;
 
 app.use(express.json());
 
@@ -48,4 +48,4 @@ app.delete('/api/players/:id', (req, res) => {
     res.send(player);
 });
 
-app.listen(port, () => console.log(`Escuchando puerto: ${PORT}...`));
+app.listen(port, () => console.log(`Escuchando puerto: ${port}...`));
