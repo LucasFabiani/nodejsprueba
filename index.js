@@ -12,7 +12,7 @@ const players = [
 ];
 
 app.get('/', (req, res) => {
-    res.send("Busca tu jugador:")
+    res.send("<html><h1>Hola bro!</h1></html>")
 });
 
 app.get('/api/players', (req, res) => {
