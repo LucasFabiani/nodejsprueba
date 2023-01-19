@@ -2,6 +2,7 @@ window.addEventListener('load', () => {
     const form = document.querySelector("#new-task-form");
     const input = document.querySelector("#new-task-input");
     const list_el = document.querySelector("#tasks");
+
     data = {}
 
     if (localStorage.getItem("data")){
@@ -58,6 +59,8 @@ window.addEventListener('load', () => {
             }
         }
 
+        const completed = false
+
         const task_el = document.createElement("div");
         task_el.classList.add("task");
         task_el.id = ("task"+id);
@@ -70,36 +73,21 @@ window.addEventListener('load', () => {
         input_el.type = "text";
         input_el.classList.add("text");
         input_el.value = task;
-        input_el.setAttribute("readonly", "readonly");
         content_el.appendChild(input_el);
+
+        input_el.addEventListener('change', (e) => {
+            const text = e.target.value;
+            data[id].text = input_el.value
+            saveData(data)
+            
+        })
 
         const actions_el = document.createElement("div");
         actions_el.classList.add("actions");
         task_el.appendChild(actions_el);
         
-
-        const edit_el = document.createElement("button");
-        edit_el.classList.add("edit")
-        edit_el.innerHTML = "edit"
-        actions_el.appendChild(edit_el);
-
-        edit_el.addEventListener('click', () => {
-            if (edit_el.innerHTML.toLowerCase() == "edit") {
-                input_el.removeAttribute('readonly');
-                input_el.focus();
-                edit_el.innerHTML = "save";
-            } else {
-                input_el.setAttribute("readonly", "readonly");
-                edit_el.innerHTML = "edit";
-                console.log("save");
-                data[id].text = input_el.value
-                saveData(data)
-            }
-        })
-
         const delete_el = document.createElement("button");
         delete_el.classList.add("delete")
-        delete_el.innerHTML = "delete"
         actions_el.appendChild(delete_el);
 
         delete_el.addEventListener('click', () => {
@@ -113,5 +101,20 @@ window.addEventListener('load', () => {
         })
 
         list_el.appendChild(task_el);
-}
+    }
+
+    var xhr = new XMLHttpRequest();
+
+    // Making our connection  
+    var url = '127.0.0.1/api/players';
+    xhr.open("GET", url, true);
+
+    // function execute after request is successful 
+    xhr.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log(this.responseText);
+        }
+    }
+    // Sending our request 
+    xhr.send();
 })

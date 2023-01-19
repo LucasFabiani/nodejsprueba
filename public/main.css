@@ -125,14 +125,14 @@ main {
     margin-right: 0.5rem;
 }
 
-#tasks .task .content .text {
-    font-size: 1rem;
+#tasks .task .content .text:focus {
     color: var(--blue);
-    width: 100%;
 }
 
-#tasks .task .content .text:read-only {
+#tasks .task .content .text {
     color: black;
+    font-size: 1rem;
+    width: 100%;
 }
 
 #tasks .task .actions {
@@ -149,7 +149,6 @@ main {
     font-weight: 800;
     text-transform: uppercase;
     transition: 0.4s;
-    background-color: var(--gray);
     border-radius: 1rem;
     color: white;
     padding: 0.75rem;
@@ -165,11 +164,18 @@ main {
 }
 
 #tasks .task .actions .delete {
-    background-color: var(--red);
+    border: 2px solid var(--blue);
+    font-weight: 800;
+    height: 2rem;
+    width: 2rem;
 }
 
-#tasks .task .actions .edit {
-    background-color: var(--gray);
+#tasks .task .actions .delete:hover {
+    content: '';
+    background: url("/public/src/img/checked.png");
+    background-clip: border-box;
+    background-position: center;
+    background-size: cover;
 }
 
 footer {
@@ -178,6 +184,7 @@ footer {
 
 footer p {
     color: gray;
+    text-align: center;
 }
 
 @media  screen and (max-width: 700px) {
@@ -196,24 +203,10 @@ footer p {
 
     #new-task-submit {
         margin-top: 1rem;
-        width: 100%;
+        width: 90%;
         max-width: 1000px;
     }
 
-    .task{
-        flex-wrap: wrap;
-    }
-
-    .task .actions {
-        display: block;
-        padding-top: 1rem;
-        justify-content: right;
-        flex: 1 1 0%;
-    }
-
-    .task .actions .edit {
-        float: right;
-    }
 
     .task .actions .delete {
         float: right;
