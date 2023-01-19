@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/LucasFabiani/nodejsprueba#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "normalize.css": "^8.0.1"
   }
 }

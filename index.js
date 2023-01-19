@@ -1,22 +1,20 @@
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 80;
+const path = require('path');
+const router = express.Router();
+const port = process.env.PORT || 3000;
 
-app.use(express.json());
 
-const players = [
-    {id: 1, name: "Player1234", level: 23, admin: false},
-    {id: 2, name: "Lucas Pro", level: 93, admin: true},
-    {id: 3, name: "FrancoGamer", level: 12, admin: false},
+const tasks = [];
 
-];
+app.use(express.static(__dirname + '/public'))
 
 app.get('/', (req, res) => {
-    res.send("Busca tu jugador:")
+    res.sendFile(__dirname + '/public/index.html');
 });
 
 app.get('/api/players', (req, res) => {
-    res.send(players)
+    res.send("Pase una noche loca en Quimili")
 });
 
 app.get('/api/players/:id', (req, res) => {

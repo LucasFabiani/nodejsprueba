@@ -1,0 +1,103 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 2rem;
+    background-color: rgb(243, 243, 243);
+
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.task_block {
+    background-color: white;
+    padding: 1rem;
+    margin-top: 2rem;
+    flex-basis: 50rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    flex-basis: 5rem;
+}
+
+.block_name {
+    display: block;
+    padding: 1rem;
+    flex-basis: fill;
+}
+
+.task_duration {
+    display: flex;
+    align-items: center;
+    align-content: space-between;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.task_duration span {
+    margin: 0.5rem;
+}
+
+.vsep_line {
+    flex-grow: 1;
+    width: 1px;
+    align-self: center;
+    background-color: #000;
+}
+
+.task_body {
+    display: flex;
+    flex-direction: row;
+}
+
+.task_list {
+    flex-grow: 1;
+}
+
+.task {
+    height: 2rem;
+    line-height: 1rem;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.hsep_line {
+    height: 1px;
+    background-color: #000;
+    flex-grow: 1;
+}
+
+.task p {
+    margin-right: 1rem;
+}
+
+.task input {
+    appearance: none;
+    margin-left: 1rem;
+    font: inherit;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.05em solid currentColor;
+    border-radius: 0.15em;
+    transform: translateY(-0.075em);
+}
+
+.create_task {
+    list-style: none;
+    display: block;
+    width: 100%;
+    justify-content: center;
+}
+
+.create_task input[type="text"] {
+    width: 80%;
+    
+}

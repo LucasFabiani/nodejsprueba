@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Ten tu lista de tareas personalizada a la mano">
+        <title>Task List V2</title>
+        <link href="normalize.css" rel="stylesheet" type="text/css">
+        <link href="styles.css" rel="stylesheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    </head>
+    <body>
+        <main class="container">
+            <div class="task_block" id="block1">
+                <div class="task_header">
+                    <h2 class="block_name">BLOQUE 1</h2>
+                </div>
+                <div class="task_body">
+                    <div class="task_duration">
+                        <span class="task_time time_start">10:00</span>
+                        <span class="vsep_line"></span>
+                        <span class="task_time time_end">11:00</span>
+                    </div>
+                    <ol class="task_list">
+                        <li class="task">
+                            <p>Lectura</p>
+                            <span class="hsep_line"></span>
+                            <input type="checkbox" class="task_check">
+                        </li>
+                        <li class="task">
+                            <p>Meditacion</p>
+                            <span class="hsep_line"></span>
+                            <input type="checkbox" class="task_check">
+                        </li>
+                        <li class="task">
+                            <p>Ejercicio</p>
+                            <span class="hsep_line"></span>
+                            <input type="checkbox" class="task_check">
+                        </li>
+                        <li class="create_task">
+                            <div id="addTask" class="add_task_form">
+                                <input placeholder="Nueva tarea" name="taskName" type="text">
+                                <input type="submit" value="Add">
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div class="task_block">
+                <div class="task_header">
+                    <h2 class="block_name">+ CREAR BLOQUE</h2>
+                </div>
+                <div class="task_body">
+            </div>
+        </main>
+    </body>
+    <script src="script.js"></script>
+</html>
