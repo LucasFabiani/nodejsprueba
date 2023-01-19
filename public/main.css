@@ -172,6 +172,14 @@ main {
     background-color: var(--gray);
 }
 
+footer {
+    padding: 2rem;
+}
+
+footer p {
+    color: gray;
+}
+
 @media  screen and (max-width: 700px) {
     body {
         padding: 0;
@@ -183,7 +191,7 @@ main {
     }
 
     main {
-        border-radius: 1rem 1rem 0 0;
+        margin-bottom: 1rem;
     }
 
     #new-task-submit {
