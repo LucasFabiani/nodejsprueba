@@ -36,6 +36,11 @@ app.post('/api/players', (req, res) => {
     res.send(player);
 });
 
+app.post('/api/print', (req, res) => {
+    console.log(req.body)
+    res.send("enviado!")
+});
+
 
 app.delete('/api/players/:id', (req, res) => {
     const player = players.find(c => c.id === parseInt(req.params.id));
