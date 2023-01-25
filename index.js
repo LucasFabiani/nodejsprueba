@@ -7,7 +7,7 @@ const port = process.env.PORT || 3000;
 
 const tasks = [];
 
-app.use(express.static(__dirname + '/public'))
+//app.use(express.static(__dirname + '/public'))
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/index.html');
@@ -36,8 +36,8 @@ app.post('/api/players', (req, res) => {
     res.send(player);
 });
 
-app.post('/api/print', (req, res) => {
-    console.log(req.body)
+app.get('/api/print/:data', (req, res) => {
+    console.log(req.params.data)
     res.send("enviado!")
 });
 
